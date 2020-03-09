@@ -6,10 +6,10 @@ matrix_equals_asm:
         subl    $20, %esp
         movl    $0, -4(%ebp)
         movl    $0, -20(%ebp)
-L1:
+.L1:
         movl    -20(%ebp), %eax
         cmpl    -16(%ebp), %eax
-        jge     L6
+        jge     .L6
 
         movl    -8(%ebp), %eax
         movl    -20(%ebp), %ecx
@@ -17,20 +17,20 @@ L1:
         movl    -12(%ebp), %ecx
         movl    -20(%ebp), %edx
         cmpl    (%ecx,%edx,4), %eax
-        je      L4
+        je      .L4
 
         movl    $0, -4(%ebp)
-        jmp     FIN
-L4:
-        jmp     L5
-L5:
+        jmp     .FIN
+.L4:
+        jmp     .L5
+.L5:
         movl    -20(%ebp), %eax
         addl    $1, %eax
         movl    %eax, -20(%ebp)
-        jmp     L1
-L6:
+        jmp     .L1
+.L6:
         movl    $1, -4(%ebp)
-FIN:
+.FIN:
         movl    -4(%ebp), %eax
         addl    $20, %esp
         popl    %ebp
