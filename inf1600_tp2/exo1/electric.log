@@ -1,0 +1,76 @@
+Electric Version 8.05
+--------------- 0 --------------
+  Tue Feb 25 15:05:03 EST 2020
+Menu Activated: File | Open Library...
+--------------- 1 --------------
+  Tue Feb 25 15:05:24 EST 2020
+ProcessKeyBinding 401 when=1582661124421 modifiers=80 code=11 char=ffff false false
+--------------- 2 --------------
+  Tue Feb 25 15:05:24 EST 2020
+ProcessKeyBinding 401 when=1582661124795 modifiers=80 code=44 char=4 false false
+--------------- 3 --------------
+  Tue Feb 25 15:05:24 EST 2020
+Menu Activated: Cell | Down Hierarchy | Down Hierarchy
+Currently highlighted: 
+    com.sun.electric.tool.user.HighlightEOBJ in cell 'arch_2bus{sch}': , 'ALU{ic}[ALU@0].op[6:0]'
+--------------- 4 --------------
+  Tue Feb 25 15:05:24 EST 2020
+ProcessKeyBinding 400 when=1582661124795 modifiers=80 code=0 char=4 false false
+--------------- 5 --------------
+  Tue Feb 25 15:05:24 EST 2020
+ProcessKeyBinding 402 when=1582661124876 modifiers=80 code=44 char=4 false false
+--------------- 6 --------------
+  Tue Feb 25 15:05:25 EST 2020
+ProcessKeyBinding 402 when=1582661125006 modifiers=0 code=11 char=ffff false false
+--------------- 7 --------------
+  Tue Feb 25 15:05:29 EST 2020
+ProcessKeyBinding 401 when=1582661129256 modifiers=80 code=11 char=ffff false false
+--------------- 8 --------------
+  Tue Feb 25 15:05:29 EST 2020
+ProcessKeyBinding 401 when=1582661129822 modifiers=80 code=44 char=4 false false
+--------------- 9 --------------
+  Tue Feb 25 15:05:29 EST 2020
+Menu Activated: Cell | Down Hierarchy | Down Hierarchy
+Currently highlighted: 
+    com.sun.electric.tool.user.HighlightEOBJ in cell 'ALU{sch}': , 'mux32bit{ic}[mux32bit@0].o[31:0]'
+--------------- 10 --------------
+  Tue Feb 25 15:05:29 EST 2020
+ProcessKeyBinding 400 when=1582661129822 modifiers=80 code=0 char=4 false false
+--------------- 11 --------------
+  Tue Feb 25 15:05:29 EST 2020
+ProcessKeyBinding 402 when=1582661129902 modifiers=80 code=44 char=4 false false
+--------------- 12 --------------
+  Tue Feb 25 15:05:30 EST 2020
+ProcessKeyBinding 402 when=1582661130092 modifiers=0 code=11 char=ffff false false
+--------------- 13 --------------
+  Tue Feb 25 15:05:34 EST 2020
+ProcessKeyBinding 401 when=1582661134651 modifiers=80 code=11 char=ffff false false
+--------------- 14 --------------
+  Tue Feb 25 15:05:35 EST 2020
+ProcessKeyBinding 402 when=1582661135141 modifiers=0 code=11 char=ffff false false
+--------------- 15 --------------
+  Tue Feb 25 15:05:36 EST 2020
+ProcessKeyBinding 401 when=1582661136101 modifiers=80 code=11 char=ffff false false
+--------------- 16 --------------
+  Tue Feb 25 15:05:36 EST 2020
+ProcessKeyBinding 402 when=1582661136246 modifiers=0 code=11 char=ffff false false
+--------------- 17 --------------
+  Tue Feb 25 15:05:36 EST 2020
+ProcessKeyBinding 401 when=1582661136894 modifiers=80 code=11 char=ffff false false
+--------------- 18 --------------
+  Tue Feb 25 15:05:37 EST 2020
+ProcessKeyBinding 401 when=1582661137395 modifiers=80 code=55 char=15 false false
+--------------- 19 --------------
+  Tue Feb 25 15:05:37 EST 2020
+Menu Activated: Cell | Up Hierarchy
+Currently highlighted: 
+    com.sun.electric.tool.user.HighlightEOBJ in cell 'mux32bit{sch}': , 'Bus_Pin[pin@11].bus'
+--------------- 20 --------------
+  Tue Feb 25 15:05:37 EST 2020
+ProcessKeyBinding 400 when=1582661137395 modifiers=80 code=0 char=15 false false
+--------------- 21 --------------
+  Tue Feb 25 15:05:37 EST 2020
+ProcessKeyBinding 402 when=1582661137482 modifiers=80 code=55 char=15 false false
+--------------- 22 --------------
+  Tue Feb 25 15:05:37 EST 2020
+ProcessKeyBinding 402 when=1582661137524 modifiers=0 code=11 char=ffff false false
