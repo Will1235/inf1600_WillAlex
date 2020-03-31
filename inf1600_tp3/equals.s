@@ -1,38 +1,55 @@
 .globl matrix_equals_asm
 
 matrix_equals_asm:
-        push %ebp      /* Save old base pointer */
-        mov %esp, %ebp /* Set ebp to current esp */
-        subl    $20, %esp
-        movl    $0, -4(%ebp)
-        movl    $0, -20(%ebp)
-L1:
-        movl    -20(%ebp), %eax
-        cmpl    -16(%ebp), %eax
-        jge     L6
-
-        movl    -8(%ebp), %eax
-        movl    -20(%ebp), %ecx
-        movl    (%eax,%ecx,4), %eax
-        movl    -12(%ebp), %ecx
-        movl    -20(%ebp), %edx
-        cmpl    (%ecx,%edx,4), %eax
-        je      L4
-
-        movl    $0, -4(%ebp)
-        jmp     FIN
-L4:
-        jmp     L5
-L5:
-        movl    -20(%ebp), %eax
-        addl    $1, %eax
-        movl    %eax, -20(%ebp)
-        jmp     L1
-L6:
-        movl    $1, -4(%ebp)
-FIN:
-        movl    -4(%ebp), %eax
-        addl    $20, %esp
-        popl    %ebp
-        leave          /* Restore ebp and esp */
-        retl           /* Return to the caller */
+       .LFB16:
+	pushq	%rbp
+	movq	%rsp, %rbp
+	movq	%rdi, -24(%rbp)
+	movq	%rsi, -32(%rbp)
+	movl	%edx, -36(%rbp)
+	movl	$0, -4(%rbp)
+	jmp	.L62
+.L67:
+	movl	$0, -8(%rbp)
+	jmp	.L63
+.L66:
+	movl	-4(%rbp), %eax
+	imull	-36(%rbp), %eax
+	movl	%eax, %edx
+	movl	-8(%rbp), %eax
+	addl	%edx, %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %edx
+	movl	-4(%rbp), %eax
+	imull	-36(%rbp), %eax
+	movl	%eax, %ecx
+	movl	-8(%rbp), %eax
+	addl	%ecx, %eax
+	cltq
+	leaq	0(,%rax,4), %rcx
+	movq	-32(%rbp), %rax
+	addq	%rcx, %rax
+	movl	(%rax), %eax
+	cmpl	%eax, %edx
+	je	.L64
+	movl	$0, %eax
+	jmp	.L65
+.L64:
+	addl	$1, -8(%rbp)
+.L63:
+	movl	-8(%rbp), %eax
+	cmpl	-36(%rbp), %eax
+	jl	.L66
+	addl	$1, -4(%rbp)
+.L62:
+	movl	-4(%rbp), %eax
+	cmpl	-36(%rbp), %eax
+	jl	.L67
+	movl	$1, %eax
+.L65:
+	popq	%rbp
+	ret
+	

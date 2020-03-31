@@ -1,56 +1,51 @@
 .global matrix_row_aver_asm
 
 matrix_row_aver_asm:
-        push %ebp      			/* Save old base pointer */
-        mov %esp, %ebp 			/* Set ebp to current esp */
-        pushl   %esi
-        subl    $28, %esp
-        movl    $0, -8(%ebp)
-        movl    $0, -24(%ebp)
-LBB0_1:                                 ## =>This Loop Header: Depth=1
-                                        ##     Child Loop BB0_3 Depth 2
-        movl    -24(%ebp), %eax
-        cmpl    -20(%ebp), %eax
-        jge     LBB0_8
-## %bb.2:                               ##   in Loop: Header=BB0_1 Depth=1
-        movl    $0, -32(%ebp)
-        movl    $0, -28(%ebp)
-LBB0_3:                                 ##   Parent Loop BB0_1 Depth=1
-                                        ## =>  This Inner Loop Header: Depth=2
-        movl    -28(%ebp), %eax
-        cmpl    -20(%ebp), %eax
-        jge     LBB0_6
-## %bb.4:                               ##   in Loop: Header=BB0_3 Depth=2
-        movl    -12(%ebp), %eax
-        movl    -28(%ebp), %ecx
-        movl    -24(%ebp), %edx
-        imull   -20(%ebp), %edx
-        addl    %edx, %ecx
-        movl    (%eax,%ecx,4), %eax
-        addl    -32(%ebp), %eax
-        movl    %eax, -32(%ebp)
-## %bb.5:                               ##   in Loop: Header=BB0_3 Depth=2
-        movl    -28(%ebp), %eax
-        addl    $1, %eax
-        movl    %eax, -28(%ebp)
-        jmp     LBB0_3
-LBB0_6:                                 ##   in Loop: Header=BB0_1 Depth=1
-        movl    -32(%ebp), %eax
-        cltd
-        idivl   -20(%ebp)
-        movl    -16(%ebp), %ecx
-        movl    -24(%ebp), %esi
-        movl    %eax, (%ecx,%esi,4)
-## %bb.7:                               ##   in Loop: Header=BB0_1 Depth=1
-        movl    -24(%ebp), %eax
-        addl    $1, %eax
-        movl    %eax, -24(%ebp)
-        jmp     LBB0_1
-LBB0_8:
-        movl    -8(%ebp), %eax
-        addl    $28, %esp
-        popl    %esi
-        popl    %ebp
-        leave          			/* Restore ebp and esp */
-        retl           			/* Return to the caller */
+       .LFB21:
+	pushq	%rbp
+	movq	%rsp, %rbp
+	movq	%rdi, -24(%rbp)
+	movq	%rsi, -32(%rbp)
+	movl	%edx, -36(%rbp)
+	movl	$0, -4(%rbp)
+	jmp	.L93
+.L96:
+	movl	$0, -12(%rbp)
+	movl	$0, -8(%rbp)
+	jmp	.L94
+.L95:
+	movl	-4(%rbp), %eax
+	imull	-36(%rbp), %eax
+	movl	%eax, %edx
+	movl	-8(%rbp), %eax
+	addl	%edx, %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-24(%rbp), %rax
+	addq	%rdx, %rax
+	movl	(%rax), %eax
+	addl	%eax, -12(%rbp)
+	addl	$1, -8(%rbp)
+.L94:
+	movl	-8(%rbp), %eax
+	cmpl	-36(%rbp), %eax
+	jl	.L95
+	movl	-4(%rbp), %eax
+	cltq
+	leaq	0(,%rax,4), %rdx
+	movq	-32(%rbp), %rax
+	leaq	(%rdx,%rax), %rcx
+	movl	-12(%rbp), %eax
+	cltd
+	idivl	-36(%rbp)
+	movl	%eax, (%rcx)
+	addl	$1, -4(%rbp)
+.L93:
+	movl	-4(%rbp), %eax
+	cmpl	-36(%rbp), %eax
+	jl	.L96
+	nop
+	nop
+	popq	%rbp
+	ret
 		

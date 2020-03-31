@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-g -m32 -g -Wall
+CFLAGS=-g -m64 -g -Wall
 RM=rm -f
 TARGET=tp3
 OBJECTS=tp3.o equals.o transpose.o multiply.o diagonal.o average.o
