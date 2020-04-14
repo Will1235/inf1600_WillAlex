@@ -94,29 +94,29 @@ void TestRectangle(float longeur, float largeur) {
 
 void TestCylinder(float rayon, float hauteur) {
 
-   Cylinder c(rayon, hauteur);
-   TestShape(c);
+    Cylinder c(rayon, hauteur);
+    TestShape(c);
 
-   /* Calculate volume using C++ and assembler methods */
-   float volumecpp = c.VolumeCpp();
-   float volumeasm = c.VolumeAsm();
+    /* Calculate volume using C++ and assembler methods */
+    float volumecpp = c.VolumeCpp();
+    float volumeasm = c.VolumeAsm();
 
-   /* Print and test calculated values */
-   std::cout << c.Name() << " volume:" << std::endl
-       << "\tC++ -> " << std::fixed << std::setprecision(2) << volumecpp << std::endl
-       << "\tASM -> " << std::fixed << std::setprecision(2) << volumeasm << std::endl;
+    /* Print and test calculated values */
+    std::cout << c.Name() << " volume:" << std::endl
+        << "\tC++ -> " << std::fixed << std::setprecision(2) << volumecpp << std::endl
+        << "\tASM -> " << std::fixed << std::setprecision(2) << volumeasm << std::endl;
 
-   if (!Equals(volumecpp, volumeasm))
-       std::cerr << "ERROR: the volumes do not match" << std::endl;
-   else
-       std::cout << "\tThe volumes match" << std::endl << std::endl;
+    if (!Equals(volumecpp, volumeasm))
+        std::cerr << "ERROR: the volumes do not match" << std::endl;
+    else
+        std::cout << "\tThe volumes match" << std::endl << std::endl;
 }
 
 /****************************************/
 /****************************************/
 
 int main() {
-   //TestRectangle(2, 3);
+   TestRectangle(2, 3);
    TestCylinder(2, 3);
    return 0;
 }
